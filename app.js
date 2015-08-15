@@ -9,6 +9,8 @@ var todos = require('./routes/todos');
 var cloud = require('./cloud');
 
 var app = express();
+// add by fengym TODO
+var captcha = require('captcha');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +31,9 @@ app.use(AV.Cloud.HttpsRedirect());
 app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// add by fengym TODO
+app.use(captcha({ url: '/captcha.jpg', color:'#0064cd', background: 'rgb(20,30,200)' })); // captcha params
 
 // 可以将一类的路由单独保存在一个文件中
 app.use('/todos', todos);

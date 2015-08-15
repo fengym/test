@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var AV = require('leanengine');
+//add by fengym
+var captcha = require('captcha');
+
+
 
 router.get('/login', function(req, res, next) {
   var errMsg = req.query.errMsg;
