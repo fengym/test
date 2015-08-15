@@ -14,6 +14,11 @@ block content
     .form-group
       label.col-sm-2.control-label 密码
       .col-sm-10: input(type='password', name='password')
+    .form-group
+      label.col-sm-2.control-label 验证码
+      .col-sm-10: input(type='captcha', name='captcha')
+      label.col-sm-2.control-label
+      .col-sm-10: img(src='/users/captcha')
     .col-sm-offset-2.col-sm-10
       input.btn.btn-default(type='submit', value='登录')
       a.btn.btn-default(href="/users/register") 注册
